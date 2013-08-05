@@ -57,7 +57,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           flatten: true,
-          src: ['src/*.html'],
+          src: ['src/*.tmpl'],
           dest: '<%= dirs.dest %>/',
           filter: 'isFile'
         }]
@@ -124,7 +124,7 @@ module.exports = function(grunt) {
 
     watch: {  // grunt-contrib-watch
       src: {
-        files: ['src/*.js', 'src/*.css', 'src/*.html'],
+        files: ['src/*.js', 'src/*.css', 'src/*.tmpl'],
         tasks: ['test'],
       }
     }

@@ -11,9 +11,9 @@ Check out the demo [here](http://www.brianpark.ca/projects/angular-hovercard/).
 
 How to Use
 ----------
-Include `angular-hovercard.(js|css)` and `angular-hovercard-tmpl.html` in your project.
+Include `angular-hovercard.(js|css|tmpl)` in your project.
 You might want to modify `templateUrl` field in `angular-hovercard.js` to point to
-`angular-hovercard-tmpl.html` correctly.
+`angular-hovercard.tmpl` correctly.
 
 Load the directive after loading `angular.js`
 
@@ -36,7 +36,7 @@ Use it in your project.
 <html ng-app="ngApp">
 ...
 <body>
-  <hovercard hover-tmpl-url="'hoverCardDetail.html'">Hover over here</hovercard>.
+  <hovercard hover-tmpl-url="'hoverCardDetail.tmpl'">Hover over here</hovercard>.
   ...
 </body>
 </html>

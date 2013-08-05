@@ -128,7 +128,7 @@
         </div>
         <div class="hc-example-content">
           <p>
-            Hi, I'm <hovercard hover-tmpl-url="'hoverCardDetail.html'">Brian Park</hovercard>.
+            Hi, I'm <hovercard hover-tmpl-url="'hoverCardDetail.tmpl'">Brian Park</hovercard>.
             This is a demo of hovercard Angular directive. It's my first attempt
             to write an Angular directive so feel free to give me suggestion for
             improvements. It was definitely fun writing it up. Angular's carefully
@@ -139,7 +139,7 @@
           </p>
         </div>
         <div class="hc-usage">
-          <pre><code>&lt;hovercard hover-tmpl-url=&quot;'hoverCardDetail.html'&quot;&gt;<br/>  Brian Park<br/>&lt;/hovercard&gt;</code></pre>
+          <pre><code>&lt;hovercard hover-tmpl-url=&quot;'hoverCardDetail.tmpl'&quot;&gt;<br/>  Brian Park<br/>&lt;/hovercard&gt;</code></pre>
         </div>
       </div>
     </div>
@@ -157,23 +157,23 @@
 
             <div class="pure-g">
               <div class="pure-u-1-5">
-                <hovercard hover-tmpl-url="'hoverCardDetail.html'" placement="topRight">topRight</hovercard>
+                <hovercard hover-tmpl-url="'hoverCardDetail.tmpl'" placement="topRight">topRight</hovercard>
                 <br/><br/>
-                <hovercard hover-tmpl-url="'hoverCardDetail.html'" placement="bottomRight">bottomRight</hovercard>
+                <hovercard hover-tmpl-url="'hoverCardDetail.tmpl'" placement="bottomRight">bottomRight</hovercard>
               </div>
 
               <div class="pure-u-3-5"></div>
 
               <div class="pure-u-1-5">
-                <hovercard hover-tmpl-url="'hoverCardDetail.html'" placement="topLeft">topLeft</hovercard>
+                <hovercard hover-tmpl-url="'hoverCardDetail.tmpl'" placement="topLeft">topLeft</hovercard>
                 <br/><br/>
-                <hovercard hover-tmpl-url="'hoverCardDetail.html'" placement="bottomLeft">bottomLeft</hovercard>
+                <hovercard hover-tmpl-url="'hoverCardDetail.tmpl'" placement="bottomLeft">bottomLeft</hovercard>
               </div>
             </div><!-- .pure-g -->
           </p>
         </div>
         <div class="hc-usage">
-          <pre><code>&lt;hovercard hover-tmpl-url=&quot;'hoverCardDetail.html'&quot; placement=&quot;bottomRight&quot;&gt;<br/>  bottomRight<br/>&lt;/hovercard&gt;</code></pre>
+          <pre><code>&lt;hovercard hover-tmpl-url=&quot;'hoverCardDetail.tmpl'&quot; placement=&quot;bottomRight&quot;&gt;<br/>  bottomRight<br/>&lt;/hovercard&gt;</code></pre>
         </div>
       </div>
     </div>
@@ -187,7 +187,7 @@
           <p>
             Yo dawg, I heard you like hovercard, so I put a hovercard in your
             hovercard so you can see a hovercard while you see a
-            <hovercard hover-tmpl-url="'nestedHoverCard.html'">hovercard</hovercard>.
+            <hovercard hover-tmpl-url="'nestedHoverCard.tmpl'">hovercard</hovercard>.
           </p>
         </div>
       </div>
@@ -203,13 +203,13 @@
             By default, the hovercard uses <span style="color: #c0392b">pomegranate color (#c0392b)</span>
             for the label. However, you can specify the different label color
             using <strong>'label-color'</strong> attribute.
-            <hovercard hover-tmpl-url="'hoverCardDetail.html'" label-color="#3498db">Different Label Color</hovercard>.
+            <hovercard hover-tmpl-url="'hoverCardDetail.tmpl'" label-color="#3498db">Different Label Color</hovercard>.
             Also, since angular-hovercard.css is simple, you can just modify the
             file and use it for your own project.
           </p>
         </div>
         <div class="hc-usage">
-          <pre><code>&lt;hovercard hover-tmpl-url=&quot;'hoverCardDetail.html'&quot; label-color=&quot;#3498db&quot;&gt;<br/>  Different Label Color<br/>&lt;/hovercard&gt;</code></pre>
+          <pre><code>&lt;hovercard hover-tmpl-url=&quot;'hoverCardDetail.tmpl'&quot; label-color=&quot;#3498db&quot;&gt;<br/>  Different Label Color<br/>&lt;/hovercard&gt;</code></pre>
         </div>
       </div>
     </div>
@@ -224,13 +224,13 @@
             By default, the hovercard uses white background.
             However, you can specify the different hovercard background using
             <strong>'background'</strong> attribute.
-            <hovercard hover-tmpl-url="'hoverCardDetail.html'" background="#ffffdb">Different Background</hovercard>.
+            <hovercard hover-tmpl-url="'hoverCardDetail.tmpl'" background="#ffffdb">Different Background</hovercard>.
             Also, since angular-hovercard.css is simple, you can just modify the
             file and use it for your own project.
           </p>
         </div>
         <div class="hc-usage">
-          <pre><code>&lt;hovercard hover-tmpl-url=&quot;'hoverCardDetail.html'&quot; background=&quot;#ffffdb&quot;&gt;<br/>  Different Background<br/>&lt;/hovercard&gt;</code></pre>
+          <pre><code>&lt;hovercard hover-tmpl-url=&quot;'hoverCardDetail.tmpl'&quot; background=&quot;#ffffdb&quot;&gt;<br/>  Different Background<br/>&lt;/hovercard&gt;</code></pre>
         </div>
       </div>
     </div>
@@ -247,13 +247,13 @@
             </div>
           </p>
           <p>
-            <hovercard hover-tmpl-url="'hoverCardDetail.html'"
+            <hovercard hover-tmpl-url="'hoverCardDetail.tmpl'"
                 on-hover-in="hoverIn()"
                 on-hover-out="hoverOut()">Hover in and out of this</hovercard>.
           </p>
         </div>
         <div class="hc-usage">
-          <pre><code>&lt;hovercard hover-tmpl-url=&quot;'hoverCardDetail.html'&quot;<br/>    on-hover-in=&quot;hoverIn()&quot;<br/>    on-hover-out=&quot;hoverOut()&quot;&gt;<br/>  Hover in and out of this<br/>&lt;/hovercard&gt;</code></pre>
+          <pre><code>&lt;hovercard hover-tmpl-url=&quot;'hoverCardDetail.tmpl'&quot;<br/>    on-hover-in=&quot;hoverIn()&quot;<br/>    on-hover-out=&quot;hoverOut()&quot;&gt;<br/>  Hover in and out of this<br/>&lt;/hovercard&gt;</code></pre>
         </div>
       </div>
     </div>
