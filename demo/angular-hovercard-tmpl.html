@@ -1,0 +1,20 @@
+<div class="angular-hovercard"
+    ng-mouseenter="showCard = true; onHoverIn()"
+    ng-mouseleave="showCard = false; onHoverOut()">
+  <label class="angular-hovercard-label"
+      ng-class="{
+        'angular-hovercard-active': showCard
+      }"
+      ng-style="hoverLabelStyle"
+      ng-transclude>
+  </label>
+
+  <div class="angular-hovercard-detail"
+      ng-init="placement = placement || 'bottomRight'"
+      ng-class="{
+        'angular-hovercard-active': showCard
+      }"
+      ng-include="hoverTmplUrl"
+      ng-style="hoverCardStyle">
+  </div>
+</div>

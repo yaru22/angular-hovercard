@@ -1,0 +1,43 @@
+.angular-hovercard {
+  display: inline-block;
+  position: relative;
+}
+
+.angular-hovercard-label {
+  color: #c0392b;
+  position: relative;
+}
+
+.angular-hovercard-label.angular-hovercard-active {
+  z-index: 99;
+}
+
+.angular-hovercard-detail {
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+
+  -webkit-box-shadow: 5px 5px 5px #888;
+     -moz-box-shadow: 5px 5px 5px #888;
+          box-shadow: 5px 5px 5px #888;
+
+  -webkit-transition: opacity 0.5s;
+     -moz-transition: opacity 0.5s;
+       -o-transition: opacity 0.5s;
+          transition: opacity 0.5s;
+
+  background: white;
+  border: 1px solid #ddd;
+  opacity: 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  position: absolute;
+  visibility: hidden;
+  width: 400px;
+  z-index: 98;
+}
+
+.angular-hovercard-detail.angular-hovercard-active {
+  opacity: 1;
+  visibility: visible;
+}
