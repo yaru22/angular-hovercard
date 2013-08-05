@@ -17,9 +17,9 @@
      -moz-border-radius: 3px;
           border-radius: 3px;
 
-  -webkit-box-shadow: 5px 5px 5px #888;
-     -moz-box-shadow: 5px 5px 5px #888;
-          box-shadow: 5px 5px 5px #888;
+  -webkit-box-shadow: 1px 1px 1px #888;
+     -moz-box-shadow: 1px 1px 1px #888;
+          box-shadow: 1px 1px 1px #888;
 
   -webkit-transition: opacity 0.5s;
      -moz-transition: opacity 0.5s;
@@ -29,8 +29,6 @@
   background: white;
   border: 1px solid #ddd;
   opacity: 0;
-  padding-left: 1em;
-  padding-right: 1em;
   position: absolute;
   visibility: hidden;
   width: 400px;

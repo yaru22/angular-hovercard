@@ -44,14 +44,14 @@ angular.module('angular-hovercard', [
         if (positionObj.bottom) {
           $scope.hoverCardStyle.bottom = '';
           $scope.hoverCardStyle.top = '-1em';
-          $scope.hoverCardStyle['padding-bottom'] = '0.5em';
+          $scope.hoverCardStyle['padding-bottom'] = '';
           $scope.hoverCardStyle['padding-top'] = '3em';
         }
         if (positionObj.top) {
           $scope.hoverCardStyle.bottom = '-1em';
           $scope.hoverCardStyle.top = '';
           $scope.hoverCardStyle['padding-bottom'] = '3em';
-          $scope.hoverCardStyle['padding-top'] = '0.5em';
+          $scope.hoverCardStyle['padding-top'] = '';
         }
         if (positionObj.left) {
           $scope.hoverCardStyle.left = '';
