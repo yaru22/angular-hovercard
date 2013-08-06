@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Angular-hovercard by yaru22</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Angular-hovercard</h1>
+        <p>Hovercard is a very lightweight Angular directive that is written purely in AngularJS. It is a card that is displayed when you hover over a label. The card can contain any html element.</p>
+
+        <p class="view"><a href="https://github.com/yaru22/angular-hovercard">View the Project on GitHub <small>yaru22/angular-hovercard</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/yaru22/angular-hovercard/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/yaru22/angular-hovercard/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/yaru22/angular-hovercard">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="angular-hovercard" class="anchor" href="#angular-hovercard"><span class="octicon octicon-link"></span></a>angular-hovercard</h1>
+
+<p>Hovercard is a very lightweight Angular directive that is written purely in AngularJS. It is a card that is displayed when you hover over a label. The card can contain any html element.</p>
+
+<h2>
+<a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h2>
+
+<p>Check out the demo <a href="http://www.brianpark.ca/projects/angular-hovercard/">here</a>.</p>
+
+<h2>
+<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to Use</h2>
+
+<p>Include <code>angular-hovercard.(js|css|tmpl)</code> in your project.
+You might want to modify <code>templateUrl</code> field in <code>angular-hovercard.js</code> to point to
+<code>angular-hovercard.tmpl</code> correctly.</p>
+
+<p>Load the directive after loading <code>angular.js</code></p>
+
+<pre><code>&lt;script src="&lt;path to angular.js&gt;"&gt;&lt;/script&gt;
+&lt;script src="&lt;path to angular-hovercard.js&gt;"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Specify angular-hovercard as a dependency of your Angular module.</p>
+
+<pre><code>var app = angular.module('ngApp', [
+  'angular-hovercard'
+]);
+</code></pre>
+
+<p>Use it in your project.</p>
+
+<pre><code>&lt;html ng-app="ngApp"&gt;
+...
+&lt;body&gt;
+  &lt;hovercard hover-tmpl-url="'hoverCardDetail.tmpl'"&gt;Hover over here&lt;/hovercard&gt;.
+  ...
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>or check out my <a href="http://plnkr.co/edit/s6BVMpqTPdeHo7zE4nWU?p=preview">Plunker</a> for the minimal setup.</p>
+
+<h2>
+<a name="how-to-contribute" class="anchor" href="#how-to-contribute"><span class="octicon octicon-link"></span></a>How to Contribute</h2>
+
+<pre><code>$ git clone https://github.com/yaru22/angular-hovercard.git
+$ cd angular-hovercard
+$ npm install; bower install
+$ # modify the source code in src/
+$ grunt clean; grunt build
+$ # test your changes; you can modify demo/ and serve it locally to see the changes.
+$ # submit a pull request
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/yaru22">yaru22</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
