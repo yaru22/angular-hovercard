@@ -2,7 +2,7 @@
 
 'use strict';
 
-angular.module('angular-hovercard', [
+angular.module('yaru22.hovercard', [
 ]).directive('hovercard', function() {
   return {
     restrict: 'E',

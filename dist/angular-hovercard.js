@@ -1,5 +1,5 @@
 'use strict';
-angular.module('angular-hovercard', []).directive('hovercard', function () {
+angular.module('yaru22.hovercard', []).directive('hovercard', function () {
   return {
     restrict: 'E',
     transclude: true,
