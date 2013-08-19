@@ -46,7 +46,7 @@ module.exports = function(grunt) {
         options: {
           port: 9999,
           hostname: '0.0.0.0',
-          base: '.',
+          base: './demo',
           keepalive: true
         }
       }
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
 
     karma: {  // grunt-karma
       single: {
-        configFile: 'test/karma-unit.conf.js',
+        configFile: 'karma-unit.conf.js',
         singleRun: true
       }
     },
@@ -108,7 +108,7 @@ module.exports = function(grunt) {
 
     open: {  // grunt-open
       demo: {
-        path: 'http://localhost:9999/demo'
+        path: 'http://localhost:9999/'
       }
     },
 
@@ -160,7 +160,13 @@ module.exports = function(grunt) {
 
   // Run dev server.
   grunt.registerTask('run', [
-    'open:demo',
-    'connect:dev'
+    'open',
+    'connect'
   ]);
+
+  // Shortcuts
+  grunt.registerTask('b', 'build');
+  grunt.registerTask('c', 'clean');
+  grunt.registerTask('s', 'run');
+  grunt.registerTask('t', 'test');
 };
