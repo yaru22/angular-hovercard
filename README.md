@@ -26,7 +26,7 @@ Specify angular-hovercard as a dependency of your Angular module.
 
 ```
 var app = angular.module('ngApp', [
-  'yaru22.hovercard'
+  'yaru22.directives.hovercard'
 ]);
 ```
 
