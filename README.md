@@ -6,7 +6,7 @@ Hovercard is a very lightweight Angular directive that is written purely in Angu
 
 Demo
 ----
-Check out the demo [here](http://www.brianpark.ca/projects/angular-hovercard/).
+Check out the demo [here](http://www.brianpark.ca/projects/angular-hovercard/demo/).
 
 
 How to Use
