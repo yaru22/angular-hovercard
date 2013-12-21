@@ -16,7 +16,8 @@
   },
 
   "ignore": [
-    "demo"
+    "demo",
+    "test"
   ],
   "dependencies": {
     "angular": "~1.2.6",
