@@ -19,10 +19,11 @@
     "demo"
   ],
   "dependencies": {
-    "angular": "PatternConsulting/bower-angular#1.1.5"
+    "angular": "~1.2.6",
+    "angular-mocks": "~1.2.6"
   },
   "devDependencies": {
-    "chai": "~1.7.2",
+    "chai": "~1.8.1",
     "jquery": "~2.0.3"
   }
 }
