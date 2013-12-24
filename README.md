@@ -11,7 +11,7 @@ Check out the demo [here](http://www.brianpark.ca/projects/angular_hovercard/dem
 
 How to Use
 ----------
-Include `angular-hovercard.(js|css|tmpl)` in your project.
+Include `angular-hovercard.(js|css|tmpl)` in your project (you can do so via `bower install angular-hovercard`).
 You might want to modify `templateUrl` field in `angular-hovercard.js` to point to
 `angular-hovercard.tmpl` correctly.
 
