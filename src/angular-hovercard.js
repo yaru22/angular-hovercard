@@ -16,11 +16,11 @@ angular.module('yaru22.directives.hovercard', [
       templateUrl: _templateUrl
     }
   }
-}).directive('hovercard', function(hovercardProvider) {
+}).directive('hovercard', function(hovercard) {
   return {
     restrict: 'E',
     transclude: true,
-    templateUrl: hovercardProvider.templateUrl,
+    templateUrl: hovercard.templateUrl,
     scope: {
       background: '@',
       hoverTmplUrl: '=',
