@@ -9,13 +9,13 @@ angular.module('yaru22.directives.hovercard', [
   this.templateUrl = function(template) {
     if (template) { _templateUrl = template; }
     return _templateUrl;
-  }
+  };
 
   this.$get = function() {
     return {
       templateUrl: _templateUrl
-    }
-  }
+    };
+  };
 }).directive('hovercard', function(hovercard) {
   return {
     restrict: 'E',
