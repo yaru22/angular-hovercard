@@ -3,18 +3,15 @@
     "name": "Brian Park",
     "email": "yaru22@gmail.com"
   },
-
   "name": "angular-hovercard",
   "description": "Angular 'hovercard' directive.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
-
   "homepage": "https://github.com/yaru22/angular-hovercard",
   "repository": {
     "type": "git",
     "url": "git://github.com/yaru22/angular-hovercard.git"
   },
-
   "ignore": [
     "demo",
     "test"
