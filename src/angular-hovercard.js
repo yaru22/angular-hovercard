@@ -3,11 +3,24 @@
 'use strict';
 
 angular.module('yaru22.directives.hovercard', [
-]).directive('hovercard', function() {
+]).provider('hovercard', function() {
+  var _templateUrl = 'angular-hovercard.tmpl';
+
+  this.templateUrl = function(template) {
+    if (template) { _templateUrl = template; }
+    return _templateUrl;
+  }
+
+  this.$get = function() {
+    return {
+      templateUrl: _templateUrl
+    }
+  }
+}).directive('hovercard', function(hovercardProvider) {
   return {
     restrict: 'E',
     transclude: true,
-    templateUrl: 'angular-hovercard.tmpl',
+    templateUrl: hovercardProvider.templateUrl,
     scope: {
       background: '@',
       hoverTmplUrl: '=',
