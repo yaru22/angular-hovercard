@@ -8,6 +8,7 @@ angular.module('yaru22.directives.hovercard', ['template/angular-hovercard.tmpl'
     restrict: 'E',
     transclude: true,
     templateUrl: 'template/angular-hovercard.tmpl',
+    scope: true,
     link: function($scope, $element, $attrs) {
       $scope.hoverTmplUrl = $attrs.hoverTmplUrl;
       $scope.onHoverIn = $scope.$eval($attrs.onHoverIn);
