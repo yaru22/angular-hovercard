@@ -6,6 +6,8 @@ angular.module('yaru22.directives.hovercard', ['template/angular-hovercard.tmpl'
     templateUrl: 'template/angular-hovercard.tmpl',
     scope: true,
     link: function ($scope, $element, $attrs) {
+      $scope.show = {};
+      $scope.show.card = false;
       $scope.hoverTmplUrl = $attrs.hoverTmplUrl;
       $scope.onHoverIn = $scope.$eval($attrs.onHoverIn);
       $scope.onHoverOut = $scope.$eval($attrs.onHoverOut);
@@ -53,6 +55,6 @@ angular.module('yaru22.directives.hovercard', ['template/angular-hovercard.tmpl'
 angular.module('template/angular-hovercard.tmpl', []).run([
   '$templateCache',
   function ($templateCache) {
-    $templateCache.put('template/angular-hovercard.tmpl', '<div class="angular-hovercard" ng-mouseenter="showCard = true; onHoverIn()" ng-mouseleave="showCard = false; onHoverOut()">' + '<label class="angular-hovercard-label" ng-class="{\'angular-hovercard-active\': showCard}" ng-style="hoverLabelStyle" ng-transclude></label>' + '<div class="angular-hovercard-detail" ng-class="{\'angular-hovercard-active\': showCard}" ng-include="hoverTmplUrl" ng-style="hoverCardStyle">' + '</div>' + '</div>');
+    $templateCache.put('template/angular-hovercard.tmpl', '<div class="angular-hovercard" ng-mouseenter="show.card = true; onHoverIn()" ng-mouseleave="show.card = false; onHoverOut()">' + '<label class="angular-hovercard-label" ng-class="{\'angular-hovercard-active\': show.card}" ng-style="hoverLabelStyle" ng-transclude></label>' + '<div class="angular-hovercard-detail" ng-class="{\'angular-hovercard-active\': show.card}" ng-include="hoverTmplUrl" ng-style="hoverCardStyle">' + '</div>' + '</div>');
   }
 ]);
