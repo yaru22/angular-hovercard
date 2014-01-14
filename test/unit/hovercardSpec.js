@@ -15,7 +15,7 @@ describe('hovercard', function() {
   beforeEach(inject(function($rootScope, $compile) {
     // we might move this tpl into an html file as well...
     elm = angular.element(
-      '<hovercard hover-tmpl-url="\'hoverCardDetail.tmpl\'">' +
+      '<hovercard hover-tmpl-url="hoverCardDetail.tmpl">' +
         'Brian Park' +
       '</hovercard>'
     );
