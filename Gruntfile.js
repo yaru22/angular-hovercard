@@ -112,7 +112,7 @@ module.exports = function(grunt) {
       }
     },
 
-    release: {
+    release: {  // grunt-release
       options: {
         file: 'bower.json',
         npm: false
