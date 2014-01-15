@@ -2,52 +2,38 @@
 
 'use strict';
 
-angular.module('yaru22.directives.hovercard', [
-]).provider('hovercard', function() {
-  var _templateUrl = 'angular-hovercard.tmpl';
-
-  this.templateUrl = function(template) {
-    if (template) { _templateUrl = template; }
-    return _templateUrl;
-  };
-
-  this.$get = function() {
-    return {
-      templateUrl: _templateUrl
-    };
-  };
-}).directive('hovercard', function(hovercard) {
+angular.module('yaru22.directives.hovercard', ['template/angular-hovercard.tmpl'
+]).directive('hovercard', function() {
   return {
     restrict: 'E',
     transclude: true,
-    templateUrl: hovercard.templateUrl,
-    scope: {
-      background: '@',
-      hoverTmplUrl: '=',
-      labelColor: '@',
-      onHoverIn: '&',
-      onHoverOut: '&',
-      placement: '@',
-      width: '@'
-    },
-    link: function($scope) {
+    templateUrl: 'template/angular-hovercard.tmpl',
+    scope: true,
+    link: function($scope, $element, $attrs) {
+      $scope.show = {};
+      $scope.show.card = false;
+      $scope.hoverTmplUrl = $attrs.hoverTmplUrl;
+      $scope.onHoverIn = $scope.$eval($attrs.onHoverIn);
+      $scope.onHoverOut = $scope.$eval($attrs.onHoverOut);
+      var placement = $attrs.placement || 'bottomRight';
+
       $scope.hoverLabelStyle = {};
-      if ($scope.labelColor) {
-        $scope.hoverLabelStyle.color = $scope.labelColor;
+      if ($attrs.labelColor) {
+        $scope.hoverLabelStyle.color = $attrs.labelColor;
       }
 
       $scope.hoverCardStyle = {};
-      if ($scope.background) {
-        $scope.hoverCardStyle.background = $scope.background;
+      if ($attrs.background) {
+        $scope.hoverCardStyle.background = $attrs.background;
       }
-      if ($scope.width) {
-        $scope.hoverCardStyle.width = $scope.width;
+      if ($attrs.width) {
+        $scope.hoverCardStyle.width = $attrs.width;
       }
 
-      if ($scope.placement) {
+      if (placement) {
         // Split placement string into two words:
         // e.g. bottomLeft -> ["bottom", "left"]
-        var positionStrings = $scope.placement.replace(/([A-Z])/g, ' $1')
+        var positionStrings = placement.replace(/([A-Z])/g, ' $1')
             .toLowerCase()
             .split(' ');
         var positionObj = {};
@@ -74,7 +60,15 @@ angular.module('yaru22.directives.hovercard', [
           $scope.hoverCardStyle.left = '-1em';
           $scope.hoverCardStyle.right = '';
         }
-      }  // if ($scope.placement)
+      }  // if (placement)
     }  // link function
   };
 });
+angular.module('template/angular-hovercard.tmpl', []).run(['$templateCache', function($templateCache) {
+  $templateCache.put('template/angular-hovercard.tmpl',
+    '<div class="angular-hovercard" ng-mouseenter="show.card = true; onHoverIn()" ng-mouseleave="show.card = false; onHoverOut()">' +
+      '<label class="angular-hovercard-label" ng-class="{\'angular-hovercard-active\': show.card}" ng-style="hoverLabelStyle" ng-transclude></label>' +
+      '<div class="angular-hovercard-detail" ng-class="{\'angular-hovercard-active\': show.card}" ng-include="hoverTmplUrl" ng-style="hoverCardStyle">' +
+      '</div>' +
+    '</div>');
+}]);
