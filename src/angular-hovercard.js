@@ -2,7 +2,12 @@
 
 'use strict';
 
-angular.module('yaru22.directives.hovercard', ['template/angular-hovercard.tmpl'
+// Create an empty module for templates. The module will be used in the generated
+// template/cache.js.
+angular.module('yaru22.directives.hovercard.tmpls', []);
+
+angular.module('yaru22.directives.hovercard', [
+  'yaru22.directives.hovercard.tmpls'
 ]).directive('hovercard', function() {
   return {
     restrict: 'E',
@@ -64,11 +69,3 @@ angular.module('yaru22.directives.hovercard', ['template/angular-hovercard.tmpl'
     }  // link function
   };
 });
-angular.module('template/angular-hovercard.tmpl', []).run(['$templateCache', function($templateCache) {
-  $templateCache.put('template/angular-hovercard.tmpl',
-    '<div class="angular-hovercard" ng-mouseenter="show.card = true; onHoverIn()" ng-mouseleave="show.card = false; onHoverOut()">' +
-      '<label class="angular-hovercard-label" ng-class="{\'angular-hovercard-active\': show.card}" ng-style="hoverLabelStyle" ng-transclude></label>' +
-      '<div class="angular-hovercard-detail" ng-class="{\'angular-hovercard-active\': show.card}" ng-include="hoverTmplUrl" ng-style="hoverCardStyle">' +
-      '</div>' +
-    '</div>');
-}]);
