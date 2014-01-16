@@ -1,27 +1,22 @@
-/* global angular */
-
 'use strict';
-
-angular.module('yaru22.directives.hovercard', ['template/angular-hovercard.tmpl'
-]).directive('hovercard', function() {
+angular.module('yaru22.directives.hovercard.tmpls', []);
+angular.module('yaru22.directives.hovercard', ['yaru22.directives.hovercard.tmpls']).directive('hovercard', function () {
   return {
     restrict: 'E',
     transclude: true,
     templateUrl: 'template/angular-hovercard.tmpl',
     scope: true,
-    link: function($scope, $element, $attrs) {
+    link: function ($scope, $element, $attrs) {
       $scope.show = {};
       $scope.show.card = false;
       $scope.hoverTmplUrl = $attrs.hoverTmplUrl;
       $scope.onHoverIn = $scope.$eval($attrs.onHoverIn);
       $scope.onHoverOut = $scope.$eval($attrs.onHoverOut);
       var placement = $attrs.placement || 'bottomRight';
-
       $scope.hoverLabelStyle = {};
       if ($attrs.labelColor) {
         $scope.hoverLabelStyle.color = $attrs.labelColor;
       }
-
       $scope.hoverCardStyle = {};
       if ($attrs.background) {
         $scope.hoverCardStyle.background = $attrs.background;
@@ -29,17 +24,11 @@ angular.module('yaru22.directives.hovercard', ['template/angular-hovercard.tmpl'
       if ($attrs.width) {
         $scope.hoverCardStyle.width = $attrs.width;
       }
-
       if (placement) {
-        // Split placement string into two words:
-        // e.g. bottomLeft -> ["bottom", "left"]
-        var positionStrings = placement.replace(/([A-Z])/g, ' $1')
-            .toLowerCase()
-            .split(' ');
+        var positionStrings = placement.replace(/([A-Z])/g, ' $1').toLowerCase().split(' ');
         var positionObj = {};
         positionObj[positionStrings[0]] = true;
         positionObj[positionStrings[1]] = true;
-
         if (positionObj.bottom) {
           $scope.hoverCardStyle.bottom = '';
           $scope.hoverCardStyle.top = '-1em';
@@ -60,15 +49,14 @@ angular.module('yaru22.directives.hovercard', ['template/angular-hovercard.tmpl'
           $scope.hoverCardStyle.left = '-1em';
           $scope.hoverCardStyle.right = '';
         }
-      }  // if (placement)
-    }  // link function
+      }
+    }
   };
 });
-angular.module('template/angular-hovercard.tmpl', []).run(['$templateCache', function($templateCache) {
-  $templateCache.put('template/angular-hovercard.tmpl',
-    '<div class="angular-hovercard" ng-mouseenter="show.card = true; onHoverIn()" ng-mouseleave="show.card = false; onHoverOut()">' +
-      '<label class="angular-hovercard-label" ng-class="{\'angular-hovercard-active\': show.card}" ng-style="hoverLabelStyle" ng-transclude></label>' +
-      '<div class="angular-hovercard-detail" ng-class="{\'angular-hovercard-active\': show.card}" ng-include="hoverTmplUrl" ng-style="hoverCardStyle">' +
-      '</div>' +
-    '</div>');
-}]);
+angular.module('yaru22.directives.hovercard.tmpls').run([
+  '$templateCache',
+  function ($templateCache) {
+    'use strict';
+    $templateCache.put('template/angular-hovercard.tmpl', '<div class=angular-hovercard ng-mouseenter="showCard = true; onHoverIn()" ng-mouseleave="showCard = false; onHoverOut()"><label class=angular-hovercard-label ng-class="{\n' + '        \'angular-hovercard-active\': showCard\n' + '      }" ng-style=hoverLabelStyle ng-transclude=""></label><div class=angular-hovercard-detail ng-class="{\n' + '        \'angular-hovercard-active\': showCard\n' + '      }" ng-include=hoverTmplUrl ng-style=hoverCardStyle></div></div>');
+  }
+]);

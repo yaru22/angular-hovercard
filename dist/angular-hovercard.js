@@ -1,5 +1,6 @@
 'use strict';
-angular.module('yaru22.directives.hovercard', ['template/angular-hovercard.tmpl']).directive('hovercard', function () {
+angular.module('yaru22.directives.hovercard.tmpls', []);
+angular.module('yaru22.directives.hovercard', ['yaru22.directives.hovercard.tmpls']).directive('hovercard', function () {
   return {
     restrict: 'E',
     transclude: true,
@@ -52,9 +53,10 @@ angular.module('yaru22.directives.hovercard', ['template/angular-hovercard.tmpl'
     }
   };
 });
-angular.module('template/angular-hovercard.tmpl', []).run([
+angular.module('yaru22.directives.hovercard.tmpls').run([
   '$templateCache',
   function ($templateCache) {
-    $templateCache.put('template/angular-hovercard.tmpl', '<div class="angular-hovercard" ng-mouseenter="show.card = true; onHoverIn()" ng-mouseleave="show.card = false; onHoverOut()">' + '<label class="angular-hovercard-label" ng-class="{\'angular-hovercard-active\': show.card}" ng-style="hoverLabelStyle" ng-transclude></label>' + '<div class="angular-hovercard-detail" ng-class="{\'angular-hovercard-active\': show.card}" ng-include="hoverTmplUrl" ng-style="hoverCardStyle">' + '</div>' + '</div>');
+    'use strict';
+    $templateCache.put('template/angular-hovercard.tmpl', '<div class=angular-hovercard ng-mouseenter="showCard = true; onHoverIn()" ng-mouseleave="showCard = false; onHoverOut()"><label class=angular-hovercard-label ng-class="{\n' + '        \'angular-hovercard-active\': showCard\n' + '      }" ng-style=hoverLabelStyle ng-transclude=""></label><div class=angular-hovercard-detail ng-class="{\n' + '        \'angular-hovercard-active\': showCard\n' + '      }" ng-include=hoverTmplUrl ng-style=hoverCardStyle></div></div>');
   }
 ]);
