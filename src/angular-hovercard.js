@@ -2,10 +2,6 @@
 
 'use strict';
 
-// Create an empty module for templates. The module will be used in the generated
-// template/cache.js.
-angular.module('yaru22.directives.hovercard.tmpls', []);
-
 angular.module('yaru22.directives.hovercard', [
   'yaru22.directives.hovercard.tmpls'
 ]).directive('hovercard', function() {
