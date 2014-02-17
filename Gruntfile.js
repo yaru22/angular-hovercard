@@ -52,7 +52,7 @@ module.exports = function (grunt) {
         options: {
           port: 9999,
           hostname: '0.0.0.0',
-          base: './demo',
+          base: '<%= dirs.demo %>',
           keepalive: true
         }
       }
