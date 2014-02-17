@@ -10,7 +10,7 @@ Check out the demo [here](http://www.brianpark.ca/projects/angular_hovercard/dem
 
 How to Use
 ----------
-Include `angular-hovercard.(js|css|tmpl)` in your project (you can do so via `bower install angular-hovercard`).
+Include `angular-hovercard.(js|css)` in your project (you can do so via `bower install angular-hovercard`).
 
 Load the directive after loading `angular.js`
 
@@ -40,22 +40,6 @@ Use it in your project.
 ```
 
 or check out my [Plunker](http://plnkr.co/edit/s6BVMpqTPdeHo7zE4nWU?p=preview) for the minimal setup.
-
-
-Specifying a different template path
-------------------------------------
-If you need to change the path to `angular-hovercard.tmpl`, you can update
-it in the provider:
-
-``` javascript
-var app = angular.module('ngApp', [
-  'yaru22.directives.hovercard'
-]);
-
-app.config(function(hovercardProvider) {
-  hovercardProvider.templateUrl('/path/to/angular-hovercard.tmpl')
-})
-```
 
 
 How to Contribute
