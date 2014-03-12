@@ -33,7 +33,7 @@ Use it in your project.
 <html ng-app="ngApp">
 ...
 <body>
-  <hovercard hover-tmpl-url="'hoverCardDetail.tmpl'">Hover over here</hovercard>.
+  <hovercard hover-tmpl-url="hoverCardDetail.tmpl">Hover over here</hovercard>.
   ...
 </body>
 </html>
