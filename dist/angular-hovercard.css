@@ -1,6 +1,6 @@
 /**
  * Angular hovercard directive.
- * @version v0.4.0 - 2014-03-12
+ * @version v1.0.0 - 2014-03-12
  * @link https://github.com/yaru22/angular-hovercard
  * @author Brian Park <yaru22@gmail.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
