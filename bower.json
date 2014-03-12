@@ -18,13 +18,13 @@
     ".gitignore",
     ".gittrack",
     ".jshintrc",
-    "demo",
+    "demo/",
     "Gruntfile.js",
     "karma-unit.conf.js",
     "package.json",
-    "src",
-    "template",
-    "test"
+    "src/",
+    "template/",
+    "test/"
   ],
   "dependencies": {
     "angular": "1.2.10",
