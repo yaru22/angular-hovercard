@@ -17,10 +17,6 @@
      -moz-border-radius: 3px;
           border-radius: 3px;
 
-  -webkit-box-shadow: 1px 1px 1px #888;
-     -moz-box-shadow: 1px 1px 1px #888;
-          box-shadow: 1px 1px 1px #888;
-
   -webkit-transition: opacity 0.5s;
      -moz-transition: opacity 0.5s;
        -o-transition: opacity 0.5s;
