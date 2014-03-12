@@ -1,5 +1,5 @@
 'use strict';
-angular.module('yaru22.directives.hovercard', ['yaru22.directives.hovercard.tmpls']).directive('hovercard', function () {
+angular.module('yaru22.hovercard', ['yaru22.hovercard.tmpls']).directive('hovercard', function () {
   return {
     restrict: 'E',
     transclude: true,
@@ -52,7 +52,7 @@ angular.module('yaru22.directives.hovercard', ['yaru22.directives.hovercard.tmpl
     }
   };
 });
-angular.module('yaru22.directives.hovercard.tmpls', []).run([
+angular.module('yaru22.hovercard.tmpls', []).run([
   '$templateCache',
   function ($templateCache) {
     'use strict';

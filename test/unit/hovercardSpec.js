@@ -7,7 +7,7 @@ describe('hovercard', function() {
   var elm, scope;
 
   // load the code
-  beforeEach(module('yaru22.directives.hovercard'));
+  beforeEach(module('yaru22.hovercard'));
 
   // load the templates
   beforeEach(module('tmpl'));

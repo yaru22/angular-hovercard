@@ -125,7 +125,7 @@ module.exports = function (grunt) {
             removeScriptTypeAttributes: true,
             removeStyleLinkTypeAttributes: true
           },
-          module: 'yaru22.directives.hovercard.tmpls',
+          module: 'yaru22.hovercard.tmpls',
           standalone: true
         }
       }
