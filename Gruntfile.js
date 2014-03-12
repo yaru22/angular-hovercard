@@ -11,9 +11,9 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     dirs: {
-      demo: 'demo',
-      dist: 'dist',
       src: 'src',
+      dist: 'dist',
+      demo: 'demo',
       tmpl: 'template'
     },
 
@@ -84,8 +84,8 @@ module.exports = function (grunt) {
     jshint: {  // grunt-contrib-jshint
       all: [
         'Gruntfile.js',
-        '<%= dirs.src %>/*.js',
-        'test/unit/*.js'
+        '<%= dirs.src %>/**/*.js',
+        'test/unit/**/*.js'
       ],
       options: {
         jshintrc: '.jshintrc'
