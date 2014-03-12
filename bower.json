@@ -14,7 +14,10 @@
   },
   "ignore": [
     "demo",
+    "Gruntfile.js",
+    "package.json",
     "src",
+    "template",
     "test"
   ],
   "dependencies": {
