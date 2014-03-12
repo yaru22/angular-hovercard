@@ -6,13 +6,18 @@
 
   "name": "angular-hovercard",
   "description": "Angular hovercard directive.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "homepage": "https://github.com/yaru22/angular-hovercard",
   "repository": {
     "type": "git",
     "url": "git://github.com/yaru22/angular-hovercard.git"
   },
+  "files": [
+    "dist/",
+    "LICENSE",
+    "README.md"
+  ],
 
   "keywords": [
     "angular",
