@@ -4,13 +4,14 @@ angular.module('yaru22.hovercard', ['yaru22.hovercard.tmpls']).directive('hoverc
     restrict: 'E',
     transclude: true,
     templateUrl: 'template/angular-hovercard.tmpl',
-    scope: true,
+    scope: {
+       onHoverIn: '&?',
+       onHoverOut: '&?'
+    },
     link: function ($scope, $element, $attrs) {
       $scope.show = {};
       $scope.show.card = false;
       $scope.hoverTmplUrl = $attrs.hoverTmplUrl;
-      $scope.onHoverIn = $scope.$eval($attrs.onHoverIn);
-      $scope.onHoverOut = $scope.$eval($attrs.onHoverOut);
       var placement = $attrs.placement || 'bottomRight';
       $scope.hoverLabelStyle = {};
       if ($attrs.labelColor) {
