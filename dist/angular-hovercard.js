@@ -1,17 +1,24 @@
+/**
+ * Angular hovercard directive.
+ * @version v1.0.3 - 2015-06-29
+ * @link https://github.com/yaru22/angular-hovercard
+ * @author Brian Park <yaru22@gmail.com>
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+ */
+/* global angular */
 'use strict';
 angular.module('yaru22.hovercard', ['yaru22.hovercard.tmpls']).directive('hovercard', function () {
   return {
     restrict: 'E',
     transclude: true,
     templateUrl: 'template/angular-hovercard.tmpl',
-    scope: {
-       onHoverIn: '&?',
-       onHoverOut: '&?'
-    },
+    scope: true,
     link: function ($scope, $element, $attrs) {
       $scope.show = {};
       $scope.show.card = false;
       $scope.hoverTmplUrl = $attrs.hoverTmplUrl;
+      $scope.onHoverIn = $scope.$eval($attrs.onHoverIn);
+      $scope.onHoverOut = $scope.$eval($attrs.onHoverOut);
       var placement = $attrs.placement || 'bottomRight';
       $scope.hoverLabelStyle = {};
       if ($attrs.labelColor) {
@@ -25,6 +32,8 @@ angular.module('yaru22.hovercard', ['yaru22.hovercard.tmpls']).directive('hoverc
         $scope.hoverCardStyle.width = $attrs.width;
       }
       if (placement) {
+        // Split placement string into two words:
+        // e.g. bottomLeft -> ["bottom", "left"]
         var positionStrings = placement.replace(/([A-Z])/g, ' $1').toLowerCase().split(' ');
         var positionObj = {};
         positionObj[positionStrings[0]] = true;
@@ -49,14 +58,14 @@ angular.module('yaru22.hovercard', ['yaru22.hovercard.tmpls']).directive('hoverc
           $scope.hoverCardStyle.left = '-1em';
           $scope.hoverCardStyle.right = '';
         }
-      }
-    }
+      }  // if (placement)
+    }  // link function
   };
 });
 angular.module('yaru22.hovercard.tmpls', []).run([
   '$templateCache',
   function ($templateCache) {
     'use strict';
-    $templateCache.put('template/angular-hovercard.tmpl', '<div class=angular-hovercard ng-mouseenter="showCard = true; onHoverIn()" ng-mouseleave="showCard = false; onHoverOut()"><label class=angular-hovercard-label ng-class="{ \'angular-hovercard-active\': showCard }" ng-style=hoverLabelStyle ng-transclude=""></label><div class=angular-hovercard-detail ng-class="{ \'angular-hovercard-active\': showCard }" ng-include=hoverTmplUrl ng-style=hoverCardStyle></div></div>');
+    $templateCache.put('template/angular-hovercard.tmpl', '<div class=angular-hovercard ng-mouseenter="showCard = true; onHoverIn()" ng-mouseleave="showCard = false; onHoverOut()"><label class=angular-hovercard-label ng-class="{ \'angular-hovercard-active\': showCard }" ng-style=hoverLabelStyle ng-transclude></label><div class=angular-hovercard-detail ng-class="{ \'angular-hovercard-active\': showCard }" ng-include=hoverTmplUrl ng-style=hoverCardStyle></div></div>');
   }
 ]);

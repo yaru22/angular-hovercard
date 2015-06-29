@@ -16,7 +16,7 @@ angular.module('yaru22.hovercard', [
       $scope.show.card = false;
       $scope.hoverTmplUrl = $attrs.hoverTmplUrl;
       $scope.onHoverIn = $scope.$eval($attrs.onHoverIn);
--     $scope.onHoverOut = $scope.$eval($attrs.onHoverOut);
+      $scope.onHoverOut = $scope.$eval($attrs.onHoverOut);
       var placement = $attrs.placement || 'bottomRight';
 
       $scope.hoverLabelStyle = {};
