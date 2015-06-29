@@ -3,6 +3,7 @@
     "name": "Brian Park",
     "email": "yaru22@gmail.com"
   },
+  "main":["dist/angular-hovercard.js","dist/angular-hovercard.css"],
   "name": "angular-hovercard",
   "description": "Angular 'hovercard' directive.",
   "version": "1.0.4",
