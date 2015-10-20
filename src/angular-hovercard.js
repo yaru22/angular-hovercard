@@ -64,11 +64,11 @@ angular.module('yaru22.hovercard', [
         }
       }  // if (placement)
 
-      var triggerEvent = 'mouseenter';
+      $scope.triggerEvent = 'mouseenter';
       if ($attrs.trigger) {
-        triggerEvent = $attrs.trigger;  // click, hover, dblclick, etc
+        $scope.triggerEvent = $attrs.trigger;  // click, hover, dblclick, etc
       }
-      $element.on(triggerEvent, function() {
+      $element.on($scope.triggerEvent, function() {
         $scope.showCard = true;
         if ($scope.onHoverIn) {
           $scope.onHoverIn();
