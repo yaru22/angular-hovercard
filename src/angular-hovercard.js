@@ -74,12 +74,6 @@ angular.module('yaru22.hovercard', [
           $scope.onHoverIn();
         }
       });
-      $element.on('mouseleave', function() {
-        $scope.showCard = false;
-        if ($scope.onHoverOut) {
-          $scope.onHoverOut();
-        }
-      });
 
     }  // link function
   };
