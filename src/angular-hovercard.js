@@ -70,7 +70,7 @@ angular.module('yaru22.hovercard', [
       } 
 
       var show = function() {
-        $scope.showCard = true;
+        $scope.show.card = true;
         if ($scope.onHoverIn) {
           $scope.onHoverIn();
         }

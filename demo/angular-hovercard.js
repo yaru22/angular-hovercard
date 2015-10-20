@@ -65,7 +65,7 @@ angular.module('yaru22.hovercard', ['yaru22.hovercard.tmpls']).directive('hoverc
         triggerEvent = $attrs.trigger;
       }
       var show = function () {
-        $scope.showCard = true;
+        $scope.show.card = true;
         if ($scope.onHoverIn) {
           $scope.onHoverIn();
         }
