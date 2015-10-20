@@ -60,18 +60,15 @@ angular.module('yaru22.hovercard', ['yaru22.hovercard.tmpls']).directive('hoverc
         }
       }
       // if (placement)
-      var delay = $attrs.delay || 0;
-      var triggerEvent = 'mouseenter';
+      $scope.triggerEvent = 'mouseenter';
       if ($attrs.trigger) {
-        triggerEvent = $attrs.trigger;  // click, hover, dblclick, etc
+        $scope.triggerEvent = $attrs.trigger;  // click, hover, dblclick, etc
       }
-      $element.on(triggerEvent, function () {
-        setTimeout(function () {
-          $scope.showCard = true;
-          if ($scope.onHoverIn) {
-            $scope.onHoverIn();
-          }
-        }, delay);
+      $element.on($scope.triggerEvent, function () {
+        $scope.showCard = true;
+        if ($scope.onHoverIn) {
+          $scope.onHoverIn();
+        }
       });
       $element.on('mouseleave', function () {
         $scope.showCard = false;
