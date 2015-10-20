@@ -77,6 +77,6 @@ angular.module('yaru22.hovercard.tmpls', []).run([
   '$templateCache',
   function ($templateCache) {
     'use strict';
-    $templateCache.put('template/angular-hovercard.tmpl', '<div class=angular-hovercard ng-mouseleave="show.Card = false; onHoverOut()"><label class=angular-hovercard-label ng-class="{ \'angular-hovercard-active\': show.card }" ng-style=hoverLabelStyle ng-transclude></label><div class=angular-hovercard-detail ng-class="{ \'angular-hovercard-active\': show.card }" ng-include=hoverTmplUrl ng-style=hoverCardStyle></div></div>');
+    $templateCache.put('template/angular-hovercard.tmpl', '<div class=angular-hovercard ng-mouseleave="show.card = false; onHoverOut()"><label class=angular-hovercard-label ng-class="{ \'angular-hovercard-active\': show.card }" ng-style=hoverLabelStyle ng-transclude></label><div class=angular-hovercard-detail ng-class="{ \'angular-hovercard-active\': show.card }" ng-include=hoverTmplUrl ng-style=hoverCardStyle></div></div>');
   }
 ]);
