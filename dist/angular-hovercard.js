@@ -61,12 +61,11 @@ angular.module('yaru22.hovercard', ['yaru22.hovercard.tmpls']).directive('hoverc
       }
       // if (placement)
       var triggerEvent = 'mouseover';
-      // if ($attrs.trigger) {
-      //   triggerEvent = $attrs.trigger;  // click, hover, dblclick, etc
-      // }
-      // console.log(triggerEvent);
+      if ($attrs.trigger) {
+        triggerEvent = $attrs.trigger;  // click, hover, dblclick, etc
+      }
       $element.on(triggerEvent, function () {
-        $scope.showCard = true;
+        $scope.show.card = true;
         if ($scope.onHoverIn) {
           $scope.onHoverIn();
         }
@@ -78,6 +77,6 @@ angular.module('yaru22.hovercard.tmpls', []).run([
   '$templateCache',
   function ($templateCache) {
     'use strict';
-    $templateCache.put('template/angular-hovercard.tmpl', '<div class=angular-hovercard ng-mouseleave="showCard = false; onHoverOut()"><label class=angular-hovercard-label ng-class="{ \'angular-hovercard-active\': showCard }" ng-style=hoverLabelStyle ng-transclude></label><div class=angular-hovercard-detail ng-class="{ \'angular-hovercard-active\': showCard }" ng-include=hoverTmplUrl ng-style=hoverCardStyle></div></div>');
+    $templateCache.put('template/angular-hovercard.tmpl', '<div class=angular-hovercard ng-mouseleave="show.Card = false; onHoverOut()"><label class=angular-hovercard-label ng-class="{ \'angular-hovercard-active\': show.card }" ng-style=hoverLabelStyle ng-transclude></label><div class=angular-hovercard-detail ng-class="{ \'angular-hovercard-active\': show.card }" ng-include=hoverTmplUrl ng-style=hoverCardStyle></div></div>');
   }
 ]);
