@@ -64,16 +64,29 @@ angular.module('yaru22.hovercard', [
         }
       }  // if (placement)
 
-      var triggerEvent = 'mouseover';
+      var triggerEvent = 'mouseenter';
       if ($attrs.trigger) {
-        triggerEvent = $attrs.trigger;  // click, hover, dblclick, etc
-      }
-      $element.on(triggerEvent, function() {
-        $scope.show.card = true;
+        triggerEvent = $attrs.trigger;
+      } 
+
+      var show = function() {
+        $scope.showCard = true;
         if ($scope.onHoverIn) {
           $scope.onHoverIn();
         }
-      });
+      };
+
+      $scope.showMouse = function () {
+        if (triggerEvent === 'mouseenter') {
+          show();
+        }
+      };
+
+      $scope.showClick = function () {
+        if (triggerEvent === 'click') {
+          show();
+        }
+      };
 
     }  // link function
   };

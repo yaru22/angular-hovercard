@@ -1,4 +1,4 @@
-<div class="angular-hovercard" ng-mouseleave="show.card = false; onHoverOut()">
+<div class="angular-hovercard" ng-click="showClick()" ng-mouseenter="showMouse()" ng-mouseleave="show.card = false; onHoverOut()">
   <label class="angular-hovercard-label" ng-class="{ 'angular-hovercard-active': show.card }" ng-style="hoverLabelStyle" ng-transclude></label>
   <div class="angular-hovercard-detail" ng-class="{ 'angular-hovercard-active': show.card }" ng-include="hoverTmplUrl" ng-style="hoverCardStyle"></div>
 </div>
