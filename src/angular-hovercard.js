@@ -64,21 +64,24 @@ angular.module('yaru22.hovercard', [
         }
       }  // if (placement)
 
-      
-      if ($attrs.onclick) {
-        $element.on('click', function() {
-          $scope.showCard = true;
-          $scope.onHoverIn();
-        });
-      } else {
-        $element.on('mouseenter', function() {
-          $scope.showCard = true;
-          $scope.onHoverIn();
-        });
+      var delay = $attrs.delay || 0;
+      var triggerEvent = 'mouseenter';
+      if ($attrs.trigger) {
+        triggerEvent = $attrs.trigger;  // click, hover, dblclick, etc
       }
+      $element.on(triggerEvent, function() {
+        setTimeout(function() {
+          $scope.showCard = true;
+          if ($scope.onHoverIn) {
+            $scope.onHoverIn();
+          }
+        },delay);
+      });
       $element.on('mouseleave', function() {
         $scope.showCard = false;
-        $scope.onHoverOut();
+        if ($scope.onHoverOut) {
+          $scope.onHoverOut();
+        }
       });
 
     }  // link function
