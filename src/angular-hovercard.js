@@ -63,6 +63,9 @@ angular.module('yaru22.hovercard', [
           $scope.hoverCardStyle.right = '';
         }
       }  // if (placement)
+       $attrs.$observe('hoverTmplUrl', function (newval) {
+          $scope.hoverTmplUrl = newval;
+      });
     }  // link function
   };
 });
